@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Cousins & Co.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:'Montserrat',sans-serif; background:#F9F6EF; color:#192A41; }
+    h1,h2,h3,.font-serif { font-family:'Playfair Display',serif; }
+    .hero { position: relative; height: 100vh; background-size: cover; background-position: center; }
+    .overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+    .content { position: relative; z-index:10; display:flex; flex-direction:column; justify:center; align-items:center; text-align:center; height:100%; padding:0 1rem; }
+    .content h1 { font-size:2rem; color:#F9F6EF; text-transform:uppercase; letter-spacing:0.2em; }
+    .content p { font-size:1.25rem; color:#F9F6EF; margin-top:0.5rem; }
+    header { background:#FFF; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+    nav a { margin-left:1rem; font-weight:500; color:#192A41; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="font-serif text-xl">Cousins & Co.</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+  <section class="hero" style="background-image:url('https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/hero/Firefly_-Two%20female%20cousins%20in%20their%20early%2020s%20standing%20together%20in%20an%20open%20field%20at%20golden%20h%20885989.jpg');">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="dates">Founded 2024</div>
+      <h1>About Us</h1>
+      <p>Meet the cousins behind the lens</p>
+    </div>
+  </section>
+</body>
+</html>
