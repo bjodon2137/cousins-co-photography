@@ -1,78 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cousins & Co. Photography</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts: Playfair Display & Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #F8F5F2;
-      color: #192A41;
-    }
-    h1, h2, h3, h4, h5, h6, .font-serif {
-      font-family: 'Playfair Display', serif;
-    }
-    .font-sans {
-      font-family: 'Montserrat', sans-serif;
-    }
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .scroll-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
-<body class="antialiased">
-  <!-- Hero Section -->
-  <section class="h-screen w-full flex items-center justify-center bg-cover bg-center bg-fixed" style="background-image: url('https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-Two%20female%20cousins%20in%20their%20early%2020s%20standing%20together%20in%20an%20open%20field%20at%20golden%20h%20885989.jpg');">
-    <div class="absolute inset-0 bg-black/40"></div>
-    <div class="text-center text-white p-4 z-10">
-      <h1 class="text-5xl md:text-8xl font-thin tracking-widest uppercase">Cousins & Co.</h1>
-      <p class="text-lg md:text-2xl font-light tracking-wider mt-4 font-sans">P H O T O G R A P H Y</p>
-    </div>
-  </section>
+<body class="bg-white text-gray-900 font-sans">
 
-  <!-- Galleries Section -->
-  <section id="galleries" class="py-20 md:py-32">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <h2 class="text-4xl md:text-5xl font-bold">Our Work</h2>
-        <p class="text-lg mt-2 text-gray-600 font-light">Capturing moments that tell a story.</p>
-      </div>
+  <header class="p-6 text-center bg-gray-100 shadow">
+    <h1 class="text-4xl font-bold">Cousins & Co. Photography</h1>
+    <p class="text-lg mt-2">Capturing real moments, beautifully.</p>
+  </header>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="space-y-6">
-          <a href="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-A%20joyful%20Black%20high%20school%20senior%20girl%20wearing%20a%20graduation%20cap%20and%20gown%2C%20holding%20he%20885989.jpg" class="gallery-item scroll-reveal">
-            <img src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-A%20joyful%20Black%20high%20school%20senior%20girl%20wearing%20a%20graduation%20cap%20and%20gown%2C%20holding%20he%20885989.jpg" loading="lazy" alt="Black high school graduate smiling at golden hour" class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-          </a>
-          <a href="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-A%20South%20Asian%20woman%20and%20her%20curvy%20White%20partner%20standing%20together%20in%20a%20photography%20s%20885989.jpg" class="gallery-item scroll-reveal">
-            <img src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-A%20South%20Asian%20woman%20and%20her%20curvy%20White%20partner%20standing%20together%20in%20a%20photography%20s%20885989.jpg" loading="lazy" alt="South Asian woman and curvy White partner in studio" class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-          </a>
-        </div>
-        <div class="space-y-6">
-          <a href="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-High%20school%20senior%20girl%20posing%20at%20golden%20hour%20in%20a%20sunlit%20open%20field%2C%20soft%20backlight%20885989.jpg" class="gallery-item scroll-reveal">
-            <img src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-High%20school%20senior%20girl%20posing%20at%20golden%20hour%20in%20a%20sunlit%20open%20field%2C%20soft%20backlight%20885989.jpg" loading="lazy" alt="Golden hour senior portrait in a field" class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-          </a>
-          <a href="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-An%20Asian%20man%20and%20his%20White%20fianc%C3%A9%20standing%20forehead%20to%20forehead%20in%20a%20softly%20lit%20down%20885989.jpg" class="gallery-item scroll-reveal">
-            <img src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-An%20Asian%20man%20and%20his%20White%20fianc%C3%A9%20standing%20forehead%20to%20forehead%20in%20a%20softly%20lit%20down%20885989.jpg" loading="lazy" alt="Engaged couple in softly lit downtown scene" class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main class="p-8">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <img src="images/Firefly_-A%20joyful%20Black%20high%20school%20senior%20girl%20wearing%20a%20graduation%20cap%20and%20gown,%20holding%20he%20885989.jpg" alt="Senior Portrait" class="rounded shadow">
+      <img src="images/Firefly_-An%20Asian%20man%20and%20his%20White%20fiancé%20standing%20forehead%20to%20forehead%20in%20a%20softly%20lit%20down%20885989.jpg" alt="Engagement" class="rounded shadow">
+    </section>
+  </main>
+
+  <footer class="p-6 text-center bg-gray-100 mt-12">
+    <p>&copy; 2025 Cousins & Co. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
