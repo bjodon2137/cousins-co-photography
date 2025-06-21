@@ -3,43 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — Cousins & Co. Photography</title>
+  <title>Cousins & Co. Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family:'Montserrat',sans-serif; color:#192A41; background:#F9F6EF; }
-    h1, h2, h3, h4, h5, h6, .font-serif { font-family:'Playfair Display',serif; }
-    .hero { position: relative; height: 100vh; background-size: cover; background-position: center; }
-    .overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
-    .hero-content { position: relative; z-index:10; display:flex; flex-direction:column; justify:center; align-items:center; text-align:center; height:100%; padding:0 1rem; }
-    .hero-content .dates { font-size: 0.9rem; color:#F9F6EF; margin-bottom:0.5rem; }
-    .hero-content h1 { font-size:2rem; color:#F9F6EF; text-transform:uppercase; letter-spacing:0.2em; }
-    .hero-content p { font-size:1.25rem; color:#F9F6EF; margin-top:0.5rem; }
-    header { background:#FFF; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
-    nav a { margin-left:1rem; font-weight:500; color:#192A41; transition:color 0.3s; }
-    nav a:hover { color:#FF6B6B; }
+    body { font-family: 'Montserrat', sans-serif; background-color: #F8F5F2; color: #192A41; }
+    h1,h2,h3,h4,h5,h6,.font-serif { font-family: 'Playfair Display', serif; }
+    .carousel { position: relative; overflow: hidden; }
+    .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+    .carousel-item { min-width: 100%; }
+    .carousel-nav { position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 2rem; color: #fff; cursor: pointer; padding: 0.5rem; background: rgba(0,0,0,0.4); border-radius: 50%; }
+    .carousel-prev { left: 1rem; }
+    .carousel-next { right: 1rem; }
   </style>
 </head>
-<body>
-  <header>
-    <div class="font-serif text-xl">Cousins & Co.</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="gallery.html">Gallery</a>
-    </nav>
+<body class="antialiased">
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow z-20">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-serif text-[#192A41]">Cousins & Co.</h1>
+      <nav class="space-x-6 uppercase tracking-wide text-sm font-medium text-[#192A41]">
+        <a href="index.html" class="hover:text-[#FF6B6B]">Home</a>
+        <a href="gallery.html" class="hover:text-[#FF6B6B]">Gallery</a>
+        <a href="about.html" class="hover:text-[#FF6B6B]">About Us</a>
+      </nav>
+    </div>
   </header>
+  <div class="pt-20"></div>
 
-  <section class="hero" style="background-image: url('https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/hero/Firefly_-Two%20female%20cousins%20in%20their%20early%2020s%20standing%20together%20in%20an%20open%20field%20at%20golden%20h%20885989.jpg');">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <div class="dates">22 March &ndash; 22 June 2024</div>
-      <h1>About Us</h1>
-      <p>Meet the cousins behind the lens</p>
+  <!-- Hero Section -->
+  <section class="h-screen bg-cover bg-center relative" style="background-image: url('https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/hero/Firefly_-Two%20female%20cousins%20in%20their%20early%2020s%20standing%20together%20in%20an%20open%20field%20at%20golden%20h%20885989.jpg');">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h2 class="text-white font-serif text-5xl md:text-7xl mb-4 leading-tight">Timeless Portraits<br/>With Soul</h2>
+      <p class="text-[#FF6B6B] uppercase tracking-widest font-semibold">Cousins & Co. Photography</p>
     </div>
   </section>
 
+  <!-- Gallery Collections -->
+  <main class="py-16">
+    <section class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Gallery Collections</h2>
+      <p class="text-gray-600 mt-2">Explore our work by category</p>
+    </section>
+
+    <!-- Seniors Carousel -->
+    <section class="mb-16">
+      <h3 class="text-2xl font-semibold text-center mb-6">Senior Portraits</h3>
+      <div class="carousel max-w-4xl mx-auto" data-carousel="seniors">
+        <div class="carousel-track">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/seniors/Firefly_-High%20school%20senior%20girl%20posing%20at%20golden%20hour%20in%20a%20sunlit%20open%20field,%20soft%20backlight%20857964.jpg" alt="Sunlit senior portrait">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/seniors/Firefly_-High%20school%20senior%20man%20seated%20on%20a%20vintage%20stool%20in%20studio%20857964.jpg" alt="Studio senior portrait">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/seniors/Firefly_-High%20school%20senior%20girl%20walking%20through%20park%20857964.jpg" alt="Autumn park senior portrait">
+        </div>
+        <div class="carousel-nav carousel-prev" data-prev="seniors">&#10094;</div>
+        <div class="carousel-nav carousel-next" data-next="seniors">&#10095;</div>
+      </div>
+    </section>
+
+    <!-- Engagements Carousel -->
+    <section class="mb-16">
+      <h3 class="text-2xl font-semibold text-center mb-6">Engagements</h3>
+      <div class="carousel max-w-4xl mx-auto" data-carousel="engagements">
+        <div class="carousel-track">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/engagements/Firefly_-A%20plus-size%20Latino%20man%20and%20his%20Black%20partner%20picnic%20431590.jpg" alt="Couple picnic engagement">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/engagements/Firefly_-An%20Asian%20man%20and%20his%20White%20fianc%C3%A9%20downtown%20857964.jpg" alt="Downtown engagement portrait">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/engagements/Firefly_-A%20South%20Asian%20woman%20and%20curvy%20partner%20857964.jpg" alt="Studio engagement portrait">
+        </div>
+        <div class="carousel-nav carousel-prev" data-prev="engagements">&#10094;</div>
+        <div class="carousel-nav carousel-next" data-next="engagements">&#10095;</div>
+      </div>
+    </section>
+
+    <!-- Graduation Carousel -->
+    <section class="mb-16">
+      <h3 class="text-2xl font-semibold text-center mb-6">Graduation Portraits</h3>
+      <div class="carousel max-w-4xl mx-auto" data-carousel="graduation">
+        <div class="carousel-track">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/graduation/Firefly_-A%20joyful%20Black%20high%20school%20senior%20gown%20857964.jpg" alt="Graduation portrait">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/graduation/Firefly_-Mixed-race%20graduate%20mural%20857964.jpg" alt="Mixed-race graduation portrait">
+        </div>
+        <div class="carousel-nav carousel-prev" data-prev="graduation">&#10094;</div>
+        <div class="carousel-nav carousel-next" data-next="graduation">&#10095;</div>
+      </div>
+    </section>
+
+    <!-- Family Carousel -->
+    <section class="mb-16">
+      <h3 class="text-2xl font-semibold text-center mb-6">Family Sessions</h3>
+      <div class="carousel max-w-4xl mx-auto" data-carousel="family">
+        <div class="carousel-track">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/family/Firefly_family%20of%20four%20857964.jpg" alt="Family of four session">
+        </div>
+        <div class="carousel-nav carousel-prev" data-prev="family">&#10094;</div>
+        <div class="carousel-nav carousel-next" data-next="family">&#10095;</div>
+      </div>
+    </section>
+
+    <!-- Studio Carousel -->
+    <section>
+      <h3 class="text-2xl font-semibold text-center mb-6">Studio Portraits</h3>
+      <div class="carousel max-w-4xl mx-auto" data-carousel="studio">
+        <div class="carousel-track">
+          <img class="carousel-item rounded-lg shadow" src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/studio/Firefly_-Studio%20senior%20stool%20857964.jpg" alt="Studio senior portrait">
+        </div>
+        <div class="carousel-nav carousel-prev" data-prev="studio">&#10094;</div>
+        <div class="carousel-nav carousel-next" data-next="studio">&#10095;</div>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const items = Array.from(track.children);
+      const prevBtn = carousel.querySelector('[data-prev]');
+      const nextBtn = carousel.querySelector('[data-next]');
+      let index = 0;
+      const update = () => track.style.transform = `translateX(-${index * 100}%)`;
+      prevBtn.addEventListener('click', e => { e.stopPropagation(); index = (index - 1 + items.length) % items.length; update(); });
+      nextBtn.addEventListener('click', e => { e.stopPropagation(); index = (index + 1) % items.length; update(); });
+    });
+  </script>
 </body>
 </html>
