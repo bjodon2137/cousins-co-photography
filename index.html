@@ -57,6 +57,15 @@
     .lightbox-next {
       right: 2rem;
     }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -96,6 +105,11 @@
         img.src = galleryItems[index].src;
         lightbox.appendChild(img);
 
+        const closeBtn = document.createElement('div');
+        closeBtn.className = 'lightbox-close';
+        closeBtn.innerHTML = '&times;';
+        closeBtn.onclick = () => lightbox.remove();
+
         const prev = document.createElement('div');
         prev.className = 'lightbox-nav lightbox-prev';
         prev.innerHTML = '&#10094;';
@@ -114,6 +128,7 @@
           img.src = galleryItems[currentIndex].src;
         };
 
+        lightbox.appendChild(closeBtn);
         lightbox.appendChild(prev);
         lightbox.appendChild(next);
 
