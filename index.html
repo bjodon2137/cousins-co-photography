@@ -3,57 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cousins & Co. Photography</title>
+  <title>About Us — Cousins & Co. Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Montserrat', sans-serif; background-color: #F8F5F2; color: #192A41; }
-    h1,h2,h3,h4,h5,h6,.font-serif { font-family: 'Playfair Display', serif; }
-    .lightbox { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:flex; justify-content:center; align-items:center; z-index:1000; cursor:pointer; padding:2rem; box-sizing:border-box; backdrop-filter: blur(5px); }
-    .lightbox img { max-width:90%; max-height:90%; border-radius:0.5rem; box-shadow:0 10px 25px rgba(0,0,0,0.5);}  
-    .lightbox-nav { position:absolute; top:50%; transform:translateY(-50%); font-size:3rem; color:#fff; cursor:pointer; user-select:none; }
-    .lightbox-prev { left:2rem; }
-    .lightbox-next { right:2rem; }
-    .lightbox-close { position:absolute; top:1rem; right:1rem; font-size:2rem; color:#fff; cursor:pointer; user-select:none; }
+    body { margin:0; font-family:'Montserrat',sans-serif; color:#192A41; background:#F9F6EF; }
+    h1, h2, h3, h4, h5, h6, .font-serif { font-family:'Playfair Display',serif; }
+    .hero { position: relative; height: 100vh; background-size: cover; background-position: center; }
+    .overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+    .hero-content { position: relative; z-index:10; display:flex; flex-direction:column; justify:center; align-items:center; text-align:center; height:100%; padding:0 1rem; }
+    .hero-content .dates { font-size: 0.9rem; color:#F9F6EF; margin-bottom:0.5rem; }
+    .hero-content h1 { font-size:2rem; color:#F9F6EF; text-transform:uppercase; letter-spacing:0.2em; }
+    .hero-content p { font-size:1.25rem; color:#F9F6EF; margin-top:0.5rem; }
+    header { background:#FFF; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+    nav a { margin-left:1rem; font-weight:500; color:#192A41; transition:color 0.3s; }
+    nav a:hover { color:#FF6B6B; }
   </style>
 </head>
-<body class="antialiased">
-  <header class="bg-[#192A41] text-white py-4 px-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-serif font-bold">Cousins & Co.</h1>
-      <nav class="space-x-4">
-        <a href="#" class="hover:text-[#FF7F6F]">Home</a>
-        <a href="#gallery" class="hover:text-[#FF7F6F]">Gallery</a>
-      </nav>
-    </div>
+<body>
+  <header>
+    <div class="font-serif text-xl">Cousins & Co.</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
   </header>
-  <main class="p-8">
-    <section class="text-center mb-12">
-      <h2 class="text-3xl font-bold">Gallery</h2>
-      <p class="text-gray-600 mt-2">A glimpse into our world</p>
-    </section>
-    <section id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <img src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-A%20joyful%20Black%20high%20school%20senior%20girl%20wearing%20a%20graduation%20cap%20and%20gown%2C%20holding%20he%20885989.jpg" alt="Senior Portrait" class="rounded-lg shadow hover:scale-105 transition-transform duration-300 gallery-item">
-      <img src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-An%20Asian%20man%20and%20his%20White%20fianc%C3%A9%20standing%20forehead%20to%20forehead%20in%20a%20softly%20lit%20down%20885989.jpg" alt="Engagement" class="rounded-lg shadow hover:scale-105 transition-transform duration-300 gallery-item">
-      <img src="https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/Firefly_-Two%20female%20cousins%20in%20their%20early%2020s%20standing%20together%20in%20an%20open%20field%20at%20golden%20h%20885989.jpg" alt="Cousins Hero" class="rounded-lg shadow hover:scale-105 transition-transform duration-300 gallery-item">
-    </section>
-  </main>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
-      let currentIndex = 0;
-      const showLightbox = (index) => {
-        const lightbox = document.createElement('div'); lightbox.className='lightbox';
-        const img = document.createElement('img'); img.src=galleryItems[index].src; lightbox.appendChild(img);
-        const closeBtn=document.createElement('div'); closeBtn.className='lightbox-close'; closeBtn.innerHTML='×'; closeBtn.onclick=()=>lightbox.remove(); lightbox.appendChild(closeBtn);
-        const prev=document.createElement('div'); prev.className='lightbox-nav lightbox-prev'; prev.innerHTML='❮'; prev.onclick=e=>{e.stopPropagation(); currentIndex=(currentIndex-1+galleryItems.length)%galleryItems.length; img.src=galleryItems[currentIndex].src;}; lightbox.appendChild(prev);
-        const next=document.createElement('div'); next.className='lightbox-nav lightbox-next'; next.innerHTML='❯'; next.onclick=e=>{e.stopPropagation(); currentIndex=(currentIndex+1)%galleryItems.length; img.src=galleryItems[currentIndex].src;}; lightbox.appendChild(next);
-        lightbox.onclick=()=>lightbox.remove(); document.body.appendChild(lightbox);
-      };
-      galleryItems.forEach((item,i)=>item.addEventListener('click',()=>{currentIndex=i; showLightbox(i);}));
-    });
-  </script>
+
+  <section class="hero" style="background-image: url('https://raw.githubusercontent.com/bjodon2137/cousins-co-photography/main/images/hero/Firefly_-Two%20female%20cousins%20in%20their%20early%2020s%20standing%20together%20in%20an%20open%20field%20at%20golden%20h%20885989.jpg');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <div class="dates">22 March &ndash; 22 June 2024</div>
+      <h1>About Us</h1>
+      <p>Meet the cousins behind the lens</p>
+    </div>
+  </section>
+
 </body>
 </html>
